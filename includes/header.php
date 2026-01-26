@@ -1,4 +1,5 @@
 <?php
+// On démarre la session PARTOUT sur le site grâce à cette ligne unique
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
 ?>
 <!DOCTYPE html>
@@ -6,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) { session_start(); }
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon E-Commerce V2</title>
+    <title>Mon E-Commerce V3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -32,7 +33,11 @@ if (session_status() === PHP_SESSION_NONE) { session_start(); }
                     <?php endif; ?>
                     
                     <li class="nav-item"><a class="nav-link" href="/e-commerce/cart.php">🛒 Panier</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/e-commerce/logout.php">Déconnexion</a></li>
+                    <li class="nav-item">
+                        <span class="nav-link text-light">Bonjour, <?= htmlspecialchars($_SESSION['user']['nom']) ?></span>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold border border-white rounded ms-2" href="/e-commerce/logout.php">Déconnexion</a></li>
+                
                 <?php else: ?>
                     <li class="nav-item"><a class="nav-link" href="/e-commerce/login.php">Connexion</a></li>
                     <li class="nav-item"><a class="nav-link" href="/e-commerce/register.php">Inscription</a></li>

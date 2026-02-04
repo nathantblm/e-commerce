@@ -1,7 +1,9 @@
 <?php
 session_start();
+// Je vide la session et je la détruis
 session_unset();
 session_destroy();
-header('Location: index.php'); // Retour à l'accueil après déconnexion
+// Retour accueil
+header('Location: index.php');
 exit();
 ?>

@@ -1,0 +1,68 @@
+/* Police globale */
+body { font-family: 'Montserrat', sans-serif; }
+
+/* L'effet "Signature" : Bordures épaisses (3px) et Ombres dures */
+.thick-border {
+    border: 3px solid black !important;
+}
+
+.hard-shadow {
+    box-shadow: 8px 8px 0px black;
+    transition: transform 0.2s;
+}
+
+.hard-shadow:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 12px 12px 0px black;
+}
+
+/* Petit ajustement pour que les liens du menu réagissent */
+.nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+}
+
+/* --- NOUVELLES CLASSES POUR LE REFACTORING --- */
+
+/* Pour la section héro de l'accueil */
+.hero-section {
+    min-height: 70vh;
+}
+
+.hero-title {
+    letter-spacing: -2px;
+}
+
+/* Pour faire tourner l'image d'accueil (si tu en remets une plus tard) */
+.rotate-img {
+    transform: rotate(2deg);
+    max-height: 60vh;
+    width: auto;
+}
+
+/* Gestion des tailles d'images produits */
+/* Pour les cartes dans la liste (Index et Articles) */
+.img-card-sm {
+    height: 250px; 
+    object-fit: contain;
+}
+
+.img-card-md {
+    height: 300px; 
+    object-fit: contain;
+}
+
+/* Pour la grande image de la page produit */
+.img-product-lg {
+    max-height: 600px; 
+    object-fit: contain;
+}
+
+/* Pour couper le texte proprement dans l'admin */
+.text-truncate-custom {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

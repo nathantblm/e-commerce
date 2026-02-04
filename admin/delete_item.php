@@ -2,12 +2,19 @@
 session_start();
 require_once '../includes/db.php';
 
-if (isset($_GET['id']) && isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
-    $id = intval($_GET['id']);
-    // On supprime d'abord le stock lié, puis l'item
-    $pdo->query("DELETE FROM stock WHERE id_item = $id");
-    $pdo->query("DELETE FROM items WHERE id = $id");
+// Sécurité admin
+if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin' && isset($_GET['id'])) {
+    
+    $id_a_supprimer = $_GET['id'];
+
+    // Je supprime d'abord le stock lié à ce produit (sinon erreur SQL Foreign Key)
+    $pdo->query("DELETE FROM stock WHERE id_item = $id_a_supprimer");
+
+    // Ensuite je supprime le produit
+    $pdo->query("DELETE FROM items WHERE id = $id_a_supprimer");
 }
+
+// Je reviens à la liste
 header('Location: index.php');
 exit();
 ?>

@@ -8,13 +8,17 @@ $featured_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="row align-items-center mb-5 hero-section">
-    <div class="col-12 text-center mb-5 mb-md-0">
+    <div class="col-12 text-center">
         <h1 class="display-3 fw-bold mb-4 text-uppercase hero-title">
             Créez votre<br>Décoration Unique
         </h1>
         
-        <p class="lead mb-5 ps-3 d-inline-block">
+        <p class="lead mb-5 d-inline-block" style="max-width: 800px;">
             Des affiches personnalisées en noir & blanc, inspirées par vos souvenirs.<br>
+            <span class="fs-6 text-muted">
+                (Les articles du catalogue sont des exemples de réalisations existantes, mais tout est possible : nous pouvons créer un design totalement inédit pour vous !)
+            </span>
+            <br><br>
             <strong>Nathan code, Sam dessine, vous décorez.</strong>
         </p>
         <br>

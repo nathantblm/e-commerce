@@ -21,7 +21,6 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 
                 <div class="card-body d-flex flex-column text-center bg-white">
                     <h5 class="card-title fw-bold text-uppercase"><?= htmlspecialchars($article['nom']) ?></h5>
-                    <p class="card-text text-muted small"><?= htmlspecialchars($article['description']) ?></p>
                     
                     <div class="mt-auto pt-3">
                         <h3 class="fw-bold mb-3"><?= number_format($article['prix'], 2) ?> €</h3>
